@@ -82,7 +82,7 @@ services:
     # command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Dev cycle with Compose
+### Dev cycle with Compose
 ### First time or if Dockerfile/requirements changed
 ```
 docker compose up --build -d
@@ -102,3 +102,4 @@ docker compose down
 ```
 docker compose logs -f
 ```
+
