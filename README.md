@@ -48,11 +48,10 @@ docker build -t myapp:latest .
 
 ## 3 Run the container (manual workflow)
 ```
-docker run --name myapp -p 3000:3000 myapp:latest
 docker run --name myapp -p 8000:8000 myapp:latest
 ```
 
-With environment from .env (recommended)
+### With environment from .env (recommended)
 ```
 docker rm -f myapp 2>$null
 docker run --name myapp -p 8000:8000 --env-file .env myapp:latest
@@ -94,6 +93,7 @@ docker compose down
 
 # Logs
 docker compose logs -f
+
 
 
 
