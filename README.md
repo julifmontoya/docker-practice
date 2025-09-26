@@ -1,4 +1,5 @@
 1) Create Dockerfile
+```
 # Dockerfile
 FROM python:3.11-slim
 
@@ -23,8 +24,9 @@ EXPOSE 8000
 
 # Start server
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-
+```
 Also add a .dockerignore (important!)
+```
 __pycache__/
 *.pyc
 *.pyo
@@ -37,7 +39,7 @@ __pycache__/
 dist/
 build/
 node_modules/
-
+```
 2) Build the image
 docker build -t myapp:latest .
 
@@ -83,3 +85,4 @@ docker compose down
 
 # Logs
 docker compose logs -f
+
