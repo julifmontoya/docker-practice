@@ -40,10 +40,10 @@ dist/
 build/
 node_modules/
 ```
-2) Build the image
+## 2 Build the image
 docker build -t myapp:latest .
 
-3) Run the container (manual workflow)
+## 3 Run the container (manual workflow)
 docker run --name myapp -p 3000:3000 myapp:latest
 docker run --name myapp -p 8000:8000 myapp:latest
 
@@ -51,12 +51,12 @@ With environment from .env (recommended)
 docker rm -f myapp 2>$null
 docker run --name myapp -p 8000:8000 --env-file .env myapp:latest
 
-4) Rebuild & restart after code changes (manual, prod-style)
+## 4 Rebuild & restart after code changes (manual, prod-style)
 docker rm -f myapp
 docker build -t myapp:latest .
 docker run --name myapp -p 8000:8000 --env-file .env myapp:latest
 
-5) Compose workflow (clean, professional)
+## 5 Compose workflow (clean, professional)
 
 Create docker-compose.yml in the project root:
 services:
@@ -85,5 +85,6 @@ docker compose down
 
 # Logs
 docker compose logs -f
+
 
 
