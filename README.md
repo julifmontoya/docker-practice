@@ -40,25 +40,34 @@ dist/
 build/
 node_modules/
 ```
+
 ## 2 Build the image
+```
 docker build -t myapp:latest .
+```
 
 ## 3 Run the container (manual workflow)
+```
 docker run --name myapp -p 3000:3000 myapp:latest
 docker run --name myapp -p 8000:8000 myapp:latest
+```
 
 With environment from .env (recommended)
+```
 docker rm -f myapp 2>$null
 docker run --name myapp -p 8000:8000 --env-file .env myapp:latest
+```
 
 ## 4 Rebuild & restart after code changes (manual, prod-style)
+```
 docker rm -f myapp
 docker build -t myapp:latest .
 docker run --name myapp -p 8000:8000 --env-file .env myapp:latest
+```
 
 ## 5 Compose workflow (clean, professional)
-
 Create docker-compose.yml in the project root:
+```
 services:
   api:
     build: .
@@ -72,7 +81,7 @@ services:
     # volumes:
     #   - ./app:/app/app
     # command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-
+```
 Dev cycle with Compose
 # First time or if Dockerfile/requirements changed
 docker compose up --build -d
@@ -85,6 +94,7 @@ docker compose down
 
 # Logs
 docker compose logs -f
+
 
 
 
