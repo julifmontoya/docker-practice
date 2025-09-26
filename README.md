@@ -1,4 +1,4 @@
-1) Create Dockerfile
+## 1 Create Dockerfile
 ```
 # Dockerfile
 FROM python:3.11-slim
@@ -85,4 +85,5 @@ docker compose down
 
 # Logs
 docker compose logs -f
+
 
